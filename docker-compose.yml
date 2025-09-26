@@ -14,6 +14,7 @@ services:
       - docker-certs-ca:/certs/ca            # Volume for CA certificates
       - docker-certs-client:/certs/client    # Volume for client certificates (used by Jenkins)
       - docker-cache:/var/lib/docker         # Volume for docker cache. Speed up image build
+      - jenkins-data:/var/jenkins_home       # mount jenkins-data to dind
 
   jenkins:
     image: jenkins/jenkins:lts-jdk11         # Jenkins LTS image with JDK 11 as per the document
